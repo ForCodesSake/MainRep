@@ -1,0 +1,130 @@
+body {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  background-color: #004C70;
+}
+
+
+.topright{  
+   float: right;
+}
+
+.register{
+    background-color:  #F2635F; /* Orange */
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.register:hover {
+    background-color: #ee3530; /* Red */
+    color: white;
+}
+
+.log{
+   background-color:   #92CD00; /* green */
+    border: none;
+    color: white;
+    padding: 5px 148px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+.log:hover {
+    background-color: #6e9a00; /* dark green */
+    color: white;
+}
+
+.h1, .h2, h1, h2{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color:white;
+    font-size: 50px;
+    text-align: center; 
+}
+
+.form-signin {
+    background-color: #0093D1;
+    max-width: 402px;
+    padding: 25px;
+    margin: 0 auto;
+    
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+  color: white;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  max-height: 35px;
+  max-width: 350px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="submit"] {
+  margin-bottom: -1px;
+  max-height: 35px;
+  max-width: 350px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  max-height: 35px;
+  max-width: 350px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.container{
+  max-width:580px;
+  max-height:299;
+  margin-top: 150px;
+  margin-bottom: auto; 
+  margin-right:auto; 
+  margin-left:auto;
+}
+
+h3{
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color:white;
+    text-align: center; 
+
+}
+
+h3:hover{
+  color:   #F4D00C;
+}
+
+.container .form-signin a{
+	color: darkblue;
+}

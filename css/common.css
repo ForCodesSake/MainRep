@@ -1,0 +1,118 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: justify;
+}
+
+.navbar .nav .tabs:hover,
+.navbar .navbar-collapse  .nav> .active > .tabs,
+.navbar .navbar-collapse  .nav> .active > .tabs:hover,
+.navbar .navbar-collapse  .nav> .active > .tabs:focus {
+	-webkit-box-shadow: 0 5px 1px -2px red;
+       -moz-box-shadow: 0 5px 1px -2px red;
+            box-shadow: 0 5px 1px -2px red;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+.navbar  .container-fluid .navbar-header .navbar-brand{
+	color: skyblue;
+	font-size: 20px;
+}
+
+.navbar  .container-fluid .navbar-header .navbar-brand:hover{
+	color: white;
+	font-size: 20px;
+}
+
+/*
+ * Sidebar
+ */
+ 
+/* Hide for mobile, show later */
+.container-fluid .row .sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+.container-fluid .row .sidebar {
+    position: fixed;
+    top: 47px;
+    left: 0;
+	height: 100%;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.row .nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.row .nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.row .nav-sidebar > .active > a,
+.row .nav-sidebar > .active > a:hover,
+.row .nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+.sidebar li h4{
+	color: white;
+	padding-left:10px;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.main .page-header {
+  margin-top: 0;
+}
+
+#myAlert{  /* this is for feedback submission */
+  float: bottom;
+  margin-top : 5px;
+  margin-left: 325px;
+  margin-bottom: 0px;
+  width: 50%;
+  align-content: center;
+}
