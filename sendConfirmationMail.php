@@ -27,7 +27,7 @@ $bodyContent  = '<h1>Hello, '.$_POST['name'].'<br>Thank you for joining us!</h1>
 $bodyContent .= '<p><b>Username : '.$_POST['userName'].'<br>';
 $bodyContent .= '<b>Password : '.$_POST['password1'].'</p>';
 $bodyContent .= '<p>Click the following confirmation link to set up your account at FWR !<br><b>We will see you there :) - FWR</b></p>';
-$bodyContent .= '<p>CONFIRM you are one of us --->&nbsp; http://localhost/MyPhpFiles/FWR/confirmMail.php?code='.$code.'</p>';
+$bodyContent .= '<p>CONFIRM you are one of us --->&nbsp; http://localhost/MyPhpFiles/MainRep/confirmMail.php?code='.$code.'</p>';
 
 $mail->Subject= 'Account Confirmation FWR';
 $mail->Body   = $bodyContent;
