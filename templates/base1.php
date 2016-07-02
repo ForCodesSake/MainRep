@@ -75,7 +75,7 @@
             <li <?php if ($thisPage=="TopRated.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Top Rated</a></li>
             <li <?php if ($thisPage=="RecentAddition.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Recent Additions</a></li>
             <li <?php if ($thisPage=="Favourites.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;My Favourites</a></li>
-            <li <?php if ($thisPage=="SubmitMovie.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-share" aria-hidden="true"></i>&nbsp;Submit Movie Requests</a></li>
+            <li <?php if ($thisPage=="addmovies.php") echo "class=\"active\""; ?> ><a href="addmovies.php"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
           </ul>
 <?php 
 	if($_SESSION['admin']) 
@@ -83,7 +83,6 @@
 ?>
           <ul class="nav nav-sidebar">
 			<li><h4>Admin Privileges</h4></li>		  
-            <li <?php if ($thisPage=="AddMovies.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
 			<li <?php if ($thisPage=="feedback.php") echo "class=\"active\""; ?> ><a href="feedback.php"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;View Feedback(s)</a></li>
             <li <?php if ($thisPage=="manageusers.php") echo "class=\"active\""; ?> ><a href="manageusers.php"><i class="fa fa-user-plus" aria-hidden="true"></i><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;Manage Users</a></li>
           </ul>
