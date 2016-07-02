@@ -102,7 +102,7 @@
 ?>
         <h4>Full Name</h4>
         <label for="name" class="sr-only">Full Name</label>
-        <input type="text" name="name" class="form-control" value='<?php if(isset($_POST['name']))echo htmlspecialchars($_POST['name'])?>' placeholder="Enter your Full Name" required autofocus>
+        <input type="text" name="name" class="form-control" value='<?php if(isset($_POST['name']))echo htmlspecialchars($_POST['name'])?>' placeholder="Enter your Full Name" pattern="^[a-zA-Z][a-zA-Z\s]*$" maxlength="36" title="Letters and spaces only" required autofocus>
 
         <h4>Email Address</h4>
         <label for="email" class="sr-only">Email address</label>
@@ -110,11 +110,11 @@
 
         <h4>UserName</h4>
         <label for="userName" class="sr-only">UserName</label>
-        <input type="text" name="userName" class="form-control" value='<?php if(isset($_POST['userName']))echo htmlspecialchars($_POST['userName'])?>' placeholder="Enter your UserName" required autofocus>
+        <input type="text" name="userName" class="form-control" value='<?php if(isset($_POST['userName']))echo htmlspecialchars($_POST['userName'])?>' placeholder="Enter your UserName" pattern="^[A-Za-z0-9_]{6,36}$" title="Username must be b/w 6 to 36 characters using Alphanumeric characters and _ only" required autofocus>
 
         <h4>Password</h4>
         <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password1" id="password1" class="form-control" placeholder="Enter your Password" required>
+        <input type="password" name="password1" id="password1" class="form-control" placeholder="Enter your Password" pattern=".{6,36}" title="Password must be between 6 to 36 characters" required>
 
         <h4>Confirm Password</h4>
         <label for="inputPassword" class="sr-only">Confirm Password</label>

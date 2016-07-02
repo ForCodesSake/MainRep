@@ -14,7 +14,6 @@
   <h1 class="page-header">Account Details</h1>
   
   <div id="myDiv" class="animate-bottom">
-
 	    
 <div class="container">
       <div class="row">

@@ -31,7 +31,7 @@
 			  <form id="form1" autocomplete="off">
 			  <h4>Hey, who do you wanna be today ? (*cough* James Bond ? *cough*) </h4>
 			  <label for="name" class="sr-only">Change Name</label>
-			  <input type="text" id="newName" class="form-control" value='<?php echo htmlspecialchars($_SESSION['name']) ?>'  placeholder="Enter your Name" required>
+			  <input type="text" id="newName" class="form-control" value='<?php echo htmlspecialchars($_SESSION['name']) ?>'  placeholder="Enter your Name" pattern="^[a-zA-Z][a-zA-Z\s]*$" maxlength="36" title="Letters and spaces only" required>
 			  <div id="notif1"></div>
 			  <br>
 			  <button type="submit" class="btn btn-success">Save Changes</button>
@@ -53,7 +53,7 @@
 				  <h4>"Lets see if your desired Username is available...(*fingers crossed*)"</h4>
 				  <label for="userName" class="sr-only">UserName</label>
 				  <input type="text" id="newUsername" class="form-control" value='<?php echo $_SESSION['login_user'] ?>' 
-				  placeholder="Enter your UserName" required>
+				  placeholder="Enter your UserName" pattern="^[A-Za-z0-9_]{6,36}$" title="Username must be b/w 6 to 36 characters using Alphanumeric characters and _ only" required>
 				  <div id="notif2"></div>
 				  <br>
 			  <button type="submit" class="btn btn-success">Save Changes</button>
@@ -79,7 +79,7 @@
 
 					<label for="password" class="sr-only">New Password</label>
 					<h4>New Password</h4>
-					  <input type="password" id="password1" class="form-control" placeholder="Enter your New Password" required>
+					  <input type="password" id="password1" class="form-control" placeholder="Enter your New Password" pattern=".{6,36}" title="Password must be between 6 to 36 characters" required>
 
 					  <h4>Confirm New Password</h4>
 					  <label for="inputPassword" class="sr-only">Confirm New Password</label>

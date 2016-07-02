@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 	$('#newName').keyup(function(){   
 		var newName=$('#newName').val();
-		
+		$('#notif1').html("");		
 		if(newName=='')
 			$('#notif1').html("<span style='color:darkred;'><i class='fa fa-exclamation-triangle' aria-hidden='true'></i>&nbsp;\"A Man has No Name!\"</span>");  
 	});  
