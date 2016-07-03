@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-<?php include 'templates/commonHead.php'; ?>
+<?php include 'templates/commonHead.php'; 
+
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+		
+	}
+?>
 		<title>F.W.R.</title>
 		
     <!-- Custom styles for this template -->
-	
+	<style>
+	#movieAlert{
+	  float: bottom;
+	  width: 50%;
+	  align-content: center;
+	}
+	</style>	
 	
 	</head>
 
 	<body>
 <?php include 'templates/base1.php'; ?>
-
+	
+	<div id="movieAlert" class="alert alert-success fade in" style="display:none;">
+				<a href="#" class="close" onclick="$('.alert').hide()">&times;</a>
+				<form class="feedback" >Movie Submitted Successfully !</form>
+	</div>
 		
     <h1 class="page-header">Add Movies</h1>
 		  
 	<div class="container col-sm-10">
 	  <h2 style="color:blue; font-family:serif;">* Movie Details *</h2>
 	  <br>
-	  <form class="form-horizontal" role="form">
+	  <form class="form-horizontal" id="addMovieForm" role="form" action="" method="POST">
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Name :</label>
 		  <div class="col-sm-10">
-			<input type="text" class="form-control" id="movieName" placeholder="What's the name ?" required>
+			<input type="text" class="form-control" id="movieName" placeholder="What's the name ?" required autofocus>
 		  </div>
 		</div>
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Description :</label>
 		  <div class="col-sm-10">
-			<input type="textarea" class="form-control" id="description" placeholder="Tell Me Something about it..." required>
+			<input type="textarea" class="form-control" id="description" placeholder="Tell Me Something about it..." required autofocus>
 		  </div>
 		</div>
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Trailer link :</label>
-		  <div class="col-sm-10">
-			<input type="text" class="form-control" id="description" placeholder="Show me the trailer on Youtube...">
+		  <div class="col-sm-8">
+			<input type="text" class="form-control" id="trailerLink" placeholder="Show me the trailer on Youtube..." required autofocus>
 		  </div>
+		  <div class="col-sm-2" id="youtubeValid" style="font-size:24px;"></div>
 		</div>
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Rating(%) :</label>
 		  <div class="col-sm-2">
-			<input type="number" min="1" max="100" class="form-control" id="description" placeholder="1 to 100">
+			<input type="number" min="1" max="100" class="form-control" id="rating" placeholder="1 to 100" required autofocus>
 		  </div>
 		</div>
 		<div class="form-group">
@@ -50,8 +66,41 @@
 		</div>
 	  </form>
 	</div>
-
-		  
+	
 <?php include 'templates/base2.php'; ?>
+	
+	<script>
+		var validYT=0;
+		function ytVidId(url) {
+			var p = /^(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?(?=.*v=((\w|-){11}))(?:\S+)?$/;
+			return (url.match(p)) ? RegExp.$1 : false;
+		}
+
+		$('#trailerLink').bind("change keyup input", function() {
+
+			var url = $(this).val();
+			if (ytVidId(url) !== false) {
+				$('#youtubeValid').html('<i class="fa fa-check" aria-hidden="true" style="color:green;"> Valid !</i>');
+				validYT=1;
+			} else {
+				$('#youtubeValid').html('<i class="fa fa-times" aria-hidden="true" style="color:red;"> Invalid !</i>');
+				validYT=0;
+			}
+		});
+		$('#addMovieForm').submit(function(event){
+			if (validYT==0) {
+				event.preventDefault();
+			}
+		})
+	</script>
+<?php	
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+		?><script>
+		$("#movieAlert").show();
+		window.setTimeout(function(){$("#movieAlert").hide(1500);},3000);
+		</script><?php
+	}
+?>
+	
 	</body>
 </html>
