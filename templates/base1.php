@@ -73,7 +73,7 @@
           <ul class="nav nav-sidebar">
 			<li><h4>MOVIES</h4></li>
             <li <?php if ($thisPage=="TopRated.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Top Rated</a></li>
-            <li <?php if ($thisPage=="RecentAddition.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Recent Additions</a></li>
+            <li <?php if ($thisPage=="recentadditions.php") echo "class=\"active\""; ?> ><a href="recentadditions.php"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Recent Additions</a></li>
             <li <?php if ($thisPage=="Favourites.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;My Favourites</a></li>
             <li <?php if ($thisPage=="addmovies.php") echo "class=\"active\""; ?> ><a href="addmovies.php"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
           </ul>

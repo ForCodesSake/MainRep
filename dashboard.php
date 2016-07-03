@@ -12,7 +12,7 @@
 	<body>
 <?php include 'templates/base1.php'; ?>
 		
-          <h1 class="page-header">Dashboard</h1>
+        <h1 class="page-header">Dashboard</h1>
   		
 <?php include 'templates/base2.php'; ?>
 	</body>
