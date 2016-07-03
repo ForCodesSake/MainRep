@@ -4,7 +4,22 @@
 <?php include 'templates/commonHead.php'; 
 
    if($_SERVER["REQUEST_METHOD"] == "POST") {
-		
+		include('config.php');
+   
+		$mvNM = mysqli_real_escape_string($db,$_POST['movieName']);
+		$mvDSC= mysqli_real_escape_string($db,$_POST['description']);
+		$trLNK= mysqli_real_escape_string($db,$_POST['trailerLink']);
+		$author= $_SESSION['id'];
+		$mvRT = mysqli_real_escape_string($db,$_POST['rating']);
+		if(!($mvNM==""||$mvDSC==""||$trLNK==""||$mvRT==""))
+		{
+		$sql = "INSERT INTO movies (name,description,trailer,author) VALUES ('$mvNM','$mvDSC','$trLNK','$author')";
+		$db->query($sql);
+		$lastID = mysqli_insert_id($db);
+		$sql = "INSERT INTO votes (userid,movieid,rate) VALUES ('$author','$lastID','$mvRT')";
+		$db->query($sql);
+		mysqli_close($db);
+		}
 	}
 ?>
 		<title>F.W.R.</title>
@@ -14,6 +29,7 @@
 	#movieAlert{
 	  float: bottom;
 	  width: 50%;
+	  margin: 0;
 	  align-content: center;
 	}
 	</style>	
@@ -37,26 +53,26 @@
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Name :</label>
 		  <div class="col-sm-10">
-			<input type="text" class="form-control" id="movieName" placeholder="What's the name ?" required autofocus>
+			<input type="text" class="form-control" id="movieName" name="movieName" placeholder="What's the name ?" required autofocus>
 		  </div>
 		</div>
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Description :</label>
 		  <div class="col-sm-10">
-			<input type="textarea" class="form-control" id="description" placeholder="Tell Me Something about it..." required autofocus>
+			<input type="textarea" class="form-control" id="description" name="description" placeholder="Tell Me Something about it..." required autofocus>
 		  </div>
 		</div>
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Trailer link :</label>
 		  <div class="col-sm-8">
-			<input type="text" class="form-control" id="trailerLink" placeholder="Show me the trailer on Youtube..." required autofocus>
+			<input type="text" class="form-control" id="trailerLink" name="trailerLink" placeholder="Show me the trailer on Youtube..." required autofocus>
 		  </div>
 		  <div class="col-sm-2" id="youtubeValid" style="font-size:24px;"></div>
 		</div>
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Rating(%) :</label>
 		  <div class="col-sm-2">
-			<input type="number" min="1" max="100" class="form-control" id="rating" placeholder="1 to 100" required autofocus>
+			<input type="number" min="1" max="100" class="form-control" id="rating" name="rating" placeholder="1 to 100" required autofocus>
 		  </div>
 		</div>
 		<div class="form-group">
