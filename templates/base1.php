@@ -19,8 +19,8 @@
             <li><a href="#" class="tabs" data-toggle="modal" data-target="#myModal">Feedback</a></li>
             <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello,<span id="helloName"><?php echo ' '.htmlspecialchars($_SESSION['name']) ?></span> <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li <?php if ($thisPage=="accountdetails.php") echo "class=\"active\""; ?> ><a href="accountdetails.php">Account Details</a></li>			  
-                <li <?php if ($thisPage=="settings.php") echo "class=\"active\""; ?> ><a href="settings.php">Settings</a></li>
+                <li <?php if ($thisPage=="accountdetails.php") echo "class=\"active\""; ?> ><a href="accountdetails.php"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;Account Details</a></li>			  
+                <li <?php if ($thisPage=="settings.php") echo "class=\"active\""; ?> ><a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;Settings</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Fed Up Already ?</li>
                 <li><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
@@ -72,9 +72,10 @@
           </ul>
           <ul class="nav nav-sidebar">
 			<li><h4>MOVIES</h4></li>
-            <li <?php if ($thisPage=="TopRated.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Top Rated</a></li>
+            <li <?php if ($thisPage=="topRated.php") echo "class=\"active\""; ?> ><a href="topRated.php"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Top Rated</a></li>
             <li <?php if ($thisPage=="recentadditions.php") echo "class=\"active\""; ?> ><a href="recentadditions.php"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Recent Additions</a></li>
-            <li <?php if ($thisPage=="Favourites.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;My Favourites</a></li>
+            <li <?php if ($thisPage=="Favourites.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Favourites / WishList</a></li>
+            <li <?php if ($thisPage=="myAdditions.php") echo "class=\"active\""; ?> ><a href="myAdditions.php"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;My Additions</a></li>
             <li <?php if ($thisPage=="addmovies.php") echo "class=\"active\""; ?> ><a href="addmovies.php"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
           </ul>
 <?php 

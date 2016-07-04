@@ -6,11 +6,11 @@
 	include('config.php');
 	
 	/* Get all movies*/
-	$sql = "SELECT * FROM movies ORDER BY time DESC";
+	$sql = "SELECT * FROM movies ORDER BY (totalrating/totalvotes) DESC";
     $result = mysqli_query($db, $sql);	
 	mysqli_close($db);
 ?>
-	<title>F.W.R. | Recent</title>
+	<title>F.W.R. | Top Rated</title>
 		
     <!-- Custom styles for this template -->
 	<link href="css/recentadditions.css" rel="stylesheet" />
@@ -20,7 +20,7 @@
 	<body>
 <?php include 'templates/base1.php'; ?>
 		
-    <h1 class="page-header">Recent Additions</h1>
+    <h1 class="page-header">Top Rated</h1>
   		
 	<div class="wrapper">
 	<div class="col-sm-12">
@@ -33,8 +33,7 @@
 		$getTime = $row['time'];
 		$getTrailer=$row['trailer'];
 		$YTid=substr($getTrailer,-11);
-		$YTthumbnail="http://img.youtube.com/vi/".$YTid."/mqdefault.jpg";
-		$totalRatings=$row['totalrating'];
+		$YTthumbnail="http://img.youtube.com/vi/".$YTid."/mqdefault.jpg";$totalRatings=$row['totalrating'];
 		$totalVotes=$row['totalvotes'];
 		$overallRating=round($totalRatings/$totalVotes,0,PHP_ROUND_HALF_DOWN);
 ?>
@@ -43,10 +42,7 @@
 			<div class="movieDabba">
 			<div class="row" style="margin-bottom:10px;">
 				<div class="trailer col-sm-6">
-				<img src="<?php echo $YTthumbnail; ?>" class="img-thumbnail">
-					<!--<div class="embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item" src="<?=$getTrailer ?>" allowfullscreen></iframe>                        
-					</div>-->
+					<img src="<?php echo $YTthumbnail; ?>" class="img-thumbnail">
 				</div>
 				<div class="movieInfo col-sm-6">
 					<a href='moviedetails.php?id=<?php echo $currMovId;?>'><h3 style="margin-top:0;"><b><u><?php echo htmlspecialchars($getmovie) ?> </u></b></h3></a>
@@ -68,7 +64,7 @@
 	</div>
 	</div>
 	</div>
-	
+
 <?php include 'templates/base2.php'; ?>		
 	</body>
 </html>

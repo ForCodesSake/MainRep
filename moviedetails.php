@@ -18,6 +18,7 @@
 			$totalRatings=$row['totalrating'];
 			$totalVotes=$row['totalvotes'];
 			$result=mysqli_fetch_array(mysqli_query($db,"SELECT name from users where id='$author'"));
+			$trailerEMBED=$row['trailer'];
 			$addedBY = $result[0];
 							
 			   $currentID=$_SESSION['id'];
@@ -78,7 +79,7 @@
 <div class="row">
   <div class="col-sm-5 vcenter">
     <div class="embed-responsive embed-responsive-16by9">
-	  <iframe class="embed-responsive-item" src="<?php echo $row['trailer']; ?>" allowfullscreen="1" style="border:1px solid;"></iframe>
+	  <iframe class="embed-responsive-item" src="<?php echo $trailerEMBED; ?>" allowfullscreen="1" style="border:1px solid;"></iframe>
 	</div>
   </div>
   
