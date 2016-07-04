@@ -16,7 +16,7 @@
 	   header('location:login.php');
    };
    
-   /* checking is user is Admin or not */
+   /* checking if user is Admin or not */
    $_SESSION['admin'] = $row['admin'];
    $_SESSION['id'] = $row['id']; 
    $_SESSION['name'] = $row['name'];

@@ -49,7 +49,7 @@
     <div class="panel-body" style="padding:5px;">
 	<table style="width:100%;margin:0px;">
 		<tr>
-			<td style='text-align:left; font-size:16px;'><?php echo htmlspecialchars($getFeedback) ?></td>
+			<td style='text-align:left; font-size:16px;'><?php echo nl2br(htmlspecialchars($getFeedback)) ?></td>
 			<td style='text-align:right;'>			
 			<a href="deletefeedback.php?id=<?php echo $getTime ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger btn-xs" role="button">
 			Delete&nbsp;<i class="fa fa-times" aria-hidden="true"></i>

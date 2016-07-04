@@ -33,6 +33,7 @@ body {
  */
 .navbar-fixed-top {
   border: 0;
+  z-index: 1;
 }
 
 .navbar  .container-fluid .navbar-header .navbar-brand{
@@ -52,6 +53,8 @@ body {
 /* Hide for mobile, show later */
 .container-fluid .row .sidebar {
   display: none;
+    z-index: 1;
+
 }
 @media (min-width: 768px) {
 .container-fluid .row .sidebar {
@@ -64,6 +67,8 @@ body {
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     border-right: 1px solid #eee;
+	  z-index: 1;
+
   }
 }
 
@@ -72,6 +77,8 @@ body {
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
   margin-left: -20px;
+    z-index: 1;
+
 }
 .row .nav-sidebar > li > a {
   padding-right: 20px;
@@ -115,4 +122,8 @@ body {
   margin-bottom: 0px;
   width: 50%;
   align-content: center;
+}
+
+.vcenter{
+display:inline-block; vertical-align:middle; float:none;
 }

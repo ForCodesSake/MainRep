@@ -3,17 +3,25 @@
 	<head>
 <?php include 'templates/commonHead.php'; 
 
+	function convertYoutube($string) {
+	return preg_replace(
+		"/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
+		"https://www.youtube.com/embed/$2",
+		$string
+	);
+	}
+
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 		include('config.php');
    
 		$mvNM = mysqli_real_escape_string($db,$_POST['movieName']);
 		$mvDSC= mysqli_real_escape_string($db,$_POST['description']);
 		$trLNK= mysqli_real_escape_string($db,$_POST['trailerLink']);
+		$trLNK= convertYoutube($trLNK);
 		$author= $_SESSION['id'];
 		$mvRT = mysqli_real_escape_string($db,$_POST['rating']);
-		if(!($mvNM==""||$mvDSC==""||$trLNK==""||$mvRT==""))
-		{
-		$sql = "INSERT INTO movies (name,description,trailer,author) VALUES ('$mvNM','$mvDSC','$trLNK','$author')";
+		if(!($mvNM==""||$mvDSC==""||$trLNK==""||$mvRT=="")){
+		$sql = "INSERT INTO movies (name,description,trailer,author,totalrating) VALUES ('$mvNM','$mvDSC','$trLNK','$author','$mvRT')";
 		$db->query($sql);
 		$lastID = mysqli_insert_id($db);
 		$sql = "INSERT INTO votes (userid,movieid,rate) VALUES ('$author','$lastID','$mvRT')";
@@ -22,7 +30,7 @@
 		}
 	}
 ?>
-		<title>F.W.R.</title>
+		<title>F.W.R. | Add Movies</title>
 		
     <!-- Custom styles for this template -->
 	<style>
@@ -49,17 +57,17 @@
 	<div class="container col-sm-10">
 	  <h2 style="color:blue; font-family:serif;">* Movie Details *</h2>
 	  <br>
-	  <form class="form-horizontal" id="addMovieForm" role="form" action="" method="POST">
+	  <form class="form-horizontal" id="addMovieForm" role="form" action="" method="POST" autocomplete="off">
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Name :</label>
 		  <div class="col-sm-10">
-			<input type="text" class="form-control" id="movieName" name="movieName" placeholder="What's the name ?" required autofocus>
+			<input type="text" class="form-control" id="movieName" name="movieName" pattern="^[A-Za-z0-9].*" title="Start with an Alphabet or Number" placeholder="What's the name ?" required autofocus>
 		  </div>
 		</div>
 		<div class="form-group">
 		  <label class="control-label col-sm-2">Description :</label>
 		  <div class="col-sm-10">
-			<input type="textarea" class="form-control" id="description" name="description" placeholder="Tell Me Something about it..." required autofocus>
+			<textarea rows="5" class="form-control" id="description" name="description" placeholder="Tell Me Something about it..." required autofocus></textarea>
 		  </div>
 		</div>
 		<div class="form-group">

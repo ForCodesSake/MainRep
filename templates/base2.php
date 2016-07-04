@@ -24,8 +24,8 @@
 				$.post("sendfeedback.php",{tamsg:msg},
 					function(data){		
 						$("#myModal").modal('hide');
-						$(".alert").show();
-						window.setTimeout(function(){$(".alert").hide(1500);},3000);
+						$("#myAlert").show();
+						window.setTimeout(function(){$("#myAlert").hide(1500);},3000);
 				});
 				return false;
 			});
