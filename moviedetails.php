@@ -41,7 +41,21 @@
 						$myVote=$fetchedArr[0];
 					}
 				}
+				//fav stuff
+				$resFav=mysqli_query($db,"SELECT * from favourites where userid='$currentID' and movieid='$id'");
+				$addedToFav=mysqli_num_rows($resFav);
 				
+				//getComments
+				$commentsRaw=mysqli_query($db,"SELECT * from comments where base='$id' order by time");
+				$distinctUsers=mysqli_query($db,"SELECT DISTINCT author FROM comments where base='$id'");
+				$nameArray=array();
+				while($rowDiff = mysqli_fetch_array($distinctUsers,MYSQLI_ASSOC)){
+					$dictID=$rowDiff['author'];
+					$data=mysqli_fetch_array(mysqli_query($db,"SELECT name FROM users where id='$dictID'"),MYSQLI_ASSOC);
+					$nameArray[$dictID]=$data['name'];
+				}
+				
+				//set Rating
 				$overallRating=round($totalRatings/$totalVotes,0,PHP_ROUND_HALF_DOWN);
 		   }
 		   
@@ -104,17 +118,47 @@
 </div>
 
 <div id="desc" style="font-size:20px; margin-top:10px; padding:5px; background:lightblue;">
-	<i><h3 style="margin-top:0;"> <u>Description</u> : </h3></i>
+	<div class="row">
+	<div class="col-sm-8">
+	<i><h3 style="margin-top:0;">>>><u>Description</u> : </h3></i>
+	</div>
+	<div class="col-sm-4" style="text-align:right">
+    <button type="button" class="btn btn-danger" id="favBtn"><?php echo ($addedToFav==0)?"<i class=\"fa fa-heart\" aria-hidden=\"true\"></i> Add to ":"<i class=\"fa fa-heartbeat\" aria-hidden=\"true\"></i> Remove from "; ?>Favourites</button>
+	</div>
+	</div>
 	<?php echo nl2br(htmlspecialchars($row['description'])) ?>
 </div>
 </div>
 
-<div id="comments">
-	<h4 style="text-align:center">Comments Section</h4>
-	<div class="well comment">Comment 1</div>
-	<div class="well comment">Comment 1</div>
-	<div class="well comment">Comment 1</div>
-	<div class="well">Comment Now...</div>
+<div id="comments" style="border:2px solid; padding 5px;">
+
+	<h4 style="text-align:center"><b>*** <u>Comments Section</u> ***</b></h4>
+	
+<?php
+	while($rowCOM = mysqli_fetch_array($commentsRaw,MYSQLI_ASSOC)){
+		$commentDATA=$rowCOM['comment'];
+		$commentTime=$rowCOM['time'];
+		$cmntAuthor=$rowCOM['author'];
+		$commentName=$nameArray[$cmntAuthor];
+?>	
+	<div class="well comment">
+	<div class="row">
+	<div class="col-sm-2 userData" style="font-size:12px; border-right:2px solid;"><?php echo $commentName;?><br><?php echo date('H:i a , d/m/Y',strtotime($commentTime));?></div>
+	<div class="col-sm-10 commentData"><?php echo nl2br(htmlspecialchars($commentDATA)); ?></div>
+	</div>
+	</div>
+<?php
+	}
+?>
+	
+	<div class="well" id="cmntNOW" style="padding:5px; margin:0;">
+	<form class="form-horizontal" autocomplete="off" id="commentForm">	
+	<div class="col-sm-10" style="padding:0;">
+	<input type="text" class="form-control" id="commentNEW" maxlength="300" pattern="^[A-Za-z0-9].*" title="Start with an Alphabet or Number" placeholder="Comment..." required>
+	</div>
+	<button type="submit" class="btn btn-success" id="cmntBTN">Comment Now !</button>
+	</form>
+	</div>
 
 </div>
 	
@@ -122,5 +166,23 @@
 	}
 	include 'templates/base2.php'; 
 ?>
+<script>
+$('#favBtn').click(function(){
+		$.post("movieDetailsHelper.php",{set:1,favMovId:<?php echo $id;?>},  
+		function(result){
+			window.location.reload(true);
+		});	
+});
+
+$('#commentForm').submit(function(e){
+	e.preventDefault();
+	var comment=$('#commentNEW').val();
+	$.post("movieDetailsHelper.php", { set:2,newCom: comment,baseMovId:<?php echo $id;?>},  
+		function(result){
+			$('#commentNEW').val('');
+			window.location.reload(true);			
+		});
+});
+</script>
 	</body>
 </html>
