@@ -75,6 +75,7 @@
             <li <?php if ($thisPage=="topRated.php") echo "class=\"active\""; ?> ><a href="topRated.php"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Top Rated</a></li>
             <li <?php if ($thisPage=="recentadditions.php") echo "class=\"active\""; ?> ><a href="recentadditions.php"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Recent Additions</a></li>
             <li <?php if ($thisPage=="favourites.php") echo "class=\"active\""; ?> ><a href="favourites.php"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Favourites / WishList</a></li>
+            <li <?php if ($thisPage=="allMovies.php") echo "class=\"active\""; ?> ><a href="allMovies.php"><i class="fa fa-arrows-alt" aria-hidden="true"></i>&nbsp;All Movies</a></li>
             <li <?php if ($thisPage=="myAdditions.php") echo "class=\"active\""; ?> ><a href="myAdditions.php"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;My Additions</a></li>
             <li <?php if ($thisPage=="addmovies.php") echo "class=\"active\""; ?> ><a href="addmovies.php"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
           </ul>

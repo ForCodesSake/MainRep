@@ -6,8 +6,22 @@
 	include('config.php');
 	
 	/* Get all movies*/
+	if(!isset($_GET['page'])){
+		$pagesize=0;	
+	}
+	else{
+		$pagesize=$_GET['page']-1;
+		$pagesize*=10;
+	}
+	
 	$currUser=$_SESSION['id'];
-	$sql = "SELECT * FROM movies where id in (SELECT movieid from favourites where userid='$currUser')";    $result = mysqli_query($db, $sql);	
+	$sql = "SELECT * FROM movies where id in (SELECT movieid from favourites where userid='$currUser') LIMIT 10 OFFSET $pagesize";    
+	$result = mysqli_query($db, $sql);
+	
+	$result2 = mysqli_query($db,"select count(1) FROM movies where id in (SELECT movieid from favourites where userid='$currUser')");
+	$numrows = mysqli_fetch_array($result2);
+	$var=$numrows[0];
+	
 	mysqli_close($db);
 ?>
 	<title>F.W.R. | Favourites</title>
@@ -65,9 +79,34 @@
 <?php
 	}
 ?>		
-	</div>
-	</div>
-	</div>
+</div>
+</div>
+</div>
+
+<?php if($var>10) { ?>
+<div class="page-footer" style=" clear:both;"> 
+<hr>
+<h5 align="center"><b><i>Page Navigation</i></b></h5> 
+<table align='center'>
+<tr>
+<?php
+	$a=1;
+	while($var>0){
+?> 
+<td align="center" style="font-size:20px; padding:5px;">
+<?php if($pagesize/10==$a-1) echo "<b><u>"; ?>
+<a href="favourites.php?page=<?php echo $a;?>"><?php echo htmlspecialchars($a)?></a>
+<?php if($pagesize/10==$a-1)echo "</b></u>";?>
+</td>
+<?php 
+	$var=$var-10;
+	$a++;
+	}
+?> 
+<tr>
+</table>
+</div>
+<?php } ?>
 	
 <?php include 'templates/base2.php'; ?>		
 	</body>

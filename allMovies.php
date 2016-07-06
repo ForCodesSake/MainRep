@@ -14,16 +14,16 @@
 		$pagesize*=10;
 	}
 	
-	$sql = "SELECT * FROM movies ORDER BY (totalrating/totalvotes) DESC LIMIT 10 OFFSET $pagesize"; 
+	$sql = "SELECT * FROM movies ORDER BY name LIMIT 10 OFFSET $pagesize "; 
 	$result = mysqli_query($db, $sql);
 
 	$result2 = mysqli_query($db,"select count(1) FROM movies");
 	$numrows = mysqli_fetch_array($result2);
-	$var=$numrows[0];
-	
+	$var=$numrows[0]; 	
+
 	mysqli_close($db); 
 ?> 
-  <title>F.W.R. | Top Rated</title> 
+  <title>F.W.R. | All Movies</title> 
      
     <!-- Custom styles for this template --> 
   <link href="css/recentadditions.css" rel="stylesheet" /> 
@@ -33,7 +33,7 @@
   <body> 
 <?php include 'templates/base1.php'; ?> 
      
-  <h1 class="page-header">Top Rated</h1> 
+  <h1 class="page-header">Alphabetical Order</h1> 
    
   <div class="wrapper"> 
   <div class="col-sm-12"> 
@@ -77,7 +77,7 @@
   </div> 
   </div> 
   </div> 
-  
+
 <?php if($var>10) { ?>
 <div class="page-footer" style=" clear:both;"> 
 <hr>
@@ -90,7 +90,7 @@
 ?> 
 <td align="center" style="font-size:20px; padding:5px;">
 <?php if($pagesize/10==$a-1) echo "<b><u>"; ?>
-<a href="topRated.php?page=<?php echo $a;?>"><?php echo htmlspecialchars($a)?></a>
+<a href="allMovies.php?page=<?php echo $a;?>"><?php echo htmlspecialchars($a)?></a>
 <?php if($pagesize/10==$a-1)echo "</b></u>";?>
 </td>
 <?php 
