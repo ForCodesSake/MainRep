@@ -27,9 +27,11 @@
               </ul>
             </li>
           </ul>
-		  <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
+		  <?php if($thisPage!="search.php") { ?>
+		  <form class="navbar-form navbar-right" method="GET" action="search.php" autocomplete="off">
+            <input type="text" class="form-control" name="query" id="query" placeholder="&#xF002; Search Movies / Descriptions..." style="font-family:Arial, FontAwesome; width:250px;" required>
           </form>
+		  <?php } ?>
         </div>
       </div>
     </nav>
