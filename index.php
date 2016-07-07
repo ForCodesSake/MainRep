@@ -91,19 +91,19 @@
 					<br>
 					<a href="mailto:vedanshudahiya@gmail.com">vedanshudahiya@gamil.com</a>
                     <br>
-					<a href="mailto:#">Shubham@gamil.com</a>
+					<a href="mailto:montyv36@gmail.com">montyv36@gmail.com</a>
                     <br>
-					<a href="mailto:#">Gaurav@gamil.com</a>
+					<a href="mailto:gauravrawat100@gmail.com">gauravrawat100@gmail.com</a>
                     <br>
                 </address>
                 <address>
 				<strong>Facebook :</strong>
 					<br>
-					<a href="https://www.facebook.com/vedanshu.dahiya">Vedanshu Dahiya</a>
+					<a href="https://www.facebook.com/vedanshu.dahiya" target="_blank">Vedanshu Dahiya</a>
                     <br>
-					<a href="#">Shubham Verma</a>
+					<a href="https://www.facebook.com/profile.php?id=100005538768822" target="_blank">Shubham Verma</a>
                     <br>
-					<a href="#">Gaurav Kumar Rawat</a>
+					<a href="https://www.facebook.com/kirito.GKR" target="_blank">Gaurav Kumar Rawat</a>
                     <br>
                 </address>
             </div>
