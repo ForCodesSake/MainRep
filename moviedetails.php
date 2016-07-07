@@ -47,12 +47,19 @@
 				
 				//getComments
 				$commentsRaw=mysqli_query($db,"SELECT * from comments where base='$id' order by time");
-				$distinctUsers=mysqli_query($db,"SELECT DISTINCT author FROM comments where base='$id'");
+				$distinctUsers=mysqli_query($db,"Select id,name from users where id in(SELECT DISTINCT author FROM comments where base='$id')");
 				$nameArray=array();
 				while($rowDiff = mysqli_fetch_array($distinctUsers,MYSQLI_ASSOC)){
-					$dictID=$rowDiff['author'];
-					$data=mysqli_fetch_array(mysqli_query($db,"SELECT name FROM users where id='$dictID'"),MYSQLI_ASSOC);
-					$nameArray[$dictID]=$data['name'];
+					$dictID=$rowDiff['id'];
+					$nameArray[$dictID]=$rowDiff['name'];
+				}
+				//get ratings
+				$RatingsRaw=mysqli_query($db,"SELECT userid,rate from votes where movieid='$id' order by rate DESC");
+				$votingUsers=mysqli_query($db,"SELECT id,name from users where id in (SELECT userid from votes where movieid = '$id')");
+				$votingNameArray=array();
+				while($rowVoters = mysqli_fetch_array($votingUsers,MYSQLI_ASSOC)){
+					$voterID = $rowVoters['id'];
+					$votingNameArray[$voterID]=$rowVoters['name'];
 				}
 				
 				//set Rating
@@ -101,7 +108,7 @@
   <h1 style="font-family:serif; color:blue;">Overall Rating :</h1>
   <h2 style="font-family:comic sans ms;"><?php echo $overallRating; ?></h2>
   </div>
-  
+    
   <div class="col-sm-offset-1 col-sm-2 vcenter" style="text-align:center; background:orange; border-radius:50%;">  
   <h1 style="font-family:serif; color:blue;">Your Rating :</h1>
   <?php if($myVote==0) { ?>
@@ -119,16 +126,48 @@
 
 <div id="desc" style="font-size:20px; margin-top:10px; padding:5px; background:lightblue;">
 	<div class="row">
-	<div class="col-sm-8">
+	<div class="col-sm-6">
 	<i><h3 style="margin-top:0;">>>><u>Description</u> : </h3></i>
 	</div>
-	<div class="col-sm-4" style="text-align:right">
+	<div class="col-sm-6" style="text-align:right">
+	<button type="button" class="btn btn-info" data-toggle="modal" data-target="#VotesModal">Check Votes</button>
     <button type="button" class="btn btn-danger" id="favBtn"><?php echo ($addedToFav==0)?"<i class=\"fa fa-heart\" aria-hidden=\"true\"></i> Add to ":"<i class=\"fa fa-heartbeat\" aria-hidden=\"true\"></i> Remove from "; ?>Favourites</button>
 	</div>
 	</div>
 	<?php echo nl2br(htmlspecialchars($row['description'])) ?>
 </div>
 </div>
+
+<!-- Votes Modal -->
+  <div class="modal fade" id="VotesModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title" style="text-align:center;">Movie Name</h3><br>
+		  <h5 style="text-align:center; margin:0;">Overall Rating : 69</h5>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
+		  <tr><th>Name</th><th>Rating</th></tr>
+<?php
+	while($rowVoteData = mysqli_fetch_array($RatingsRaw,MYSQLI_ASSOC)){
+		$voterRate=$rowVoteData['rate'];
+		$voterUserId=$rowVoteData['userid'];
+		$voterName=$votingNameArray[$voterUserId];
+?>		  
+		  <tr><td><?php echo $voterName; ?></?php></td><td><?php echo $voterRate; ?></?php></td></tr>
+<?php
+	}
+?>		  
+		  </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 <div id="comments" style="border:2px solid; padding 5px;">
 
