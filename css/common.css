@@ -26,9 +26,10 @@ body {
 .navbar .navbar-collapse  .nav> .active > .tabs,
 .navbar .navbar-collapse  .nav> .active > .tabs:hover,
 .navbar .navbar-collapse  .nav> .active > .tabs:focus {
-	-webkit-box-shadow: 0 5px 1px -2px red;
-       -moz-box-shadow: 0 5px 1px -2px red;
-            box-shadow: 0 5px 1px -2px red;
+	color:gold;
+	-webkit-box-shadow: 0 5px 1px -2px gold;
+       -moz-box-shadow: 0 5px 1px -2px gold;
+            box-shadow: 0 5px 1px -2px gold;
 }
 
 /*

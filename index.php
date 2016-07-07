@@ -115,17 +115,18 @@
             <div class="col-sm-4">
                 <img class="img-circle img-responsive img-center" src="images/user.png">
                 <h2 class="aboutName">Vedanshu Dahiya</h2>
-                <p class="aboutName">About Me</p>
+                <p class="aboutName">IIT-Roorkee<br><br>Gmail : vedanshudahiya@gmail.com<br>Yahoo : vedanshudahiya@yahoo.com<br>Facebook :<a href="https://www.facebook.com/vedanshu.dahiya" target="_blank">Vedanshu Dahiya</a><br>
+			    <br><strong>Other Project(s) :</strong><br><a href="http://fwr.net23.net/" target="_blank">'Present!' Android App</a></p>
             </div>
             <div class="col-sm-4">
                 <img class="img-circle img-responsive img-center" src="images/user.png">
                 <h2 class="aboutName">Shubham Verma</h2>
-                <p class="aboutName">About Me</p>
+                <p class="aboutName">IIT-Roorkee<br><br>Gmail : montyv36@gmail.com<br>Facebook :<a href="https://www.facebook.com/profile.php?id=100005538768822" target="_blank">Shubham Verma</a><br></p>
             </div>
             <div class="col-sm-4">
                 <img class="img-circle img-responsive img-center" src="images/user.png">
                 <h2 class="aboutName">Gaurav Kumar Rawat</h2>
-                <p class="aboutName">About Me</p>
+                <p class="aboutName">IIT-Roorkee<br><br>Gmail : gauravrawat100@gmail.com<br>Facebook :<a href="https://www.facebook.com/kirito.GKR" target="_blank">Gaurav Kumar Rawat</a><br></p>
             </div>
         </div>
         <!-- /.row -->

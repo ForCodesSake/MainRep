@@ -16,19 +16,20 @@
 
           <div class="row placeholders">
             <div id="myDiv1" class="col-xs-4 placeholder animate-bottom">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive">
+              <img src="images/user.png" width="200" height="200" class="img-responsive">
               <h4>Vedanshu Dahiya</h4>
-              <span class="text-muted">Lead Designer/Developer :p</span>
+              <span class="text-muted">IIT-Roorkee<br><br>Gmail : vedanshudahiya@gmail.com<br>Yahoo : vedanshudahiya@yahoo.com<br>Facebook :<a href="https://www.facebook.com/vedanshu.dahiya" target="_blank">Vedanshu Dahiya</a><br>
+			  <br><strong>Other Project(s) :</strong><br><a href="http://fwr.net23.net/" target="_blank">'Present!' Android App</a></span>
             </div>
             <div id="myDiv2" class="col-xs-4 placeholder animate-bottom">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive">
+              <img src="images/user.png" width="200" height="200" class="img-responsive">
               <h4>Shubham Verma</h4>
-              <span class="text-muted">Co-Developer</span>
-            </div>
+              <span class="text-muted">IIT-Roorkee<br><br>Gmail : montyv36@gmail.com<br>Facebook :<a href="https://www.facebook.com/profile.php?id=100005538768822" target="_blank">Shubham Verma</a><br></span>
+    		  </div>
             <div id="myDiv3" class="col-xs-4 placeholder animate-bottom">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive">
+              <img src="images/user.png" width="200" height="200" class="img-responsive">
               <h4>Gaurav Kumar Rawat</h4>
-              <span class="text-muted">Co-Designer</span>
+              <span class="text-muted">IIT-Roorkee<br><br>Gmail : gauravrawat100@gmail.com<br>Facebook :<a href="https://www.facebook.com/kirito.GKR" target="_blank">Gaurav Kumar Rawat</a><br></span>
             </div>
           </div>
 <?php include 'templates/base2.php'; ?>
