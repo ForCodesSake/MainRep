@@ -1,0 +1,45 @@
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.homepagePicture{
+    height: 400px;
+    background: url("../images/dead.jpg") center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.navbar .nav .tabs{
+	color:gold;
+}
+
+.navbar .nav .tabs:hover,
+.navbar .navbar-collapse  .nav> .active > .tabs,
+.navbar .navbar-collapse  .nav> .active > .tabs:hover,
+.navbar .navbar-collapse  .nav> .active > .tabs:focus {
+	-webkit-box-shadow: 0 5px 1px -2px gold;
+       -moz-box-shadow: 0 5px 1px -2px gold;
+            box-shadow: 0 5px 1px -2px gold;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.aboutName{
+	text-align:center;
+}

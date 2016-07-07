@@ -128,9 +128,7 @@
     </div> <!-- /container -->
       <br><br>
     <div class="back">
-      <a href="https://www.google.co.in/"><h3 id="back">
-  <!-- NOT linked to home page -->
-   Back to HOME</h3></a>
+      <a href="index.php"><h3 id="back">Back to HOME</h3></a>
     </div>
 
 	<!-- Modal -->

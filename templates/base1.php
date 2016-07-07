@@ -11,7 +11,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" style="font-family:comic sans ms;font-style:italic;font-weight:bold;">Friends with Ratings&trade;</a>
+          <a class="navbar-brand" href="dashboard.php" style="font-family:comic sans ms;font-style:italic;font-weight:bold;">Friends with Ratings&trade;</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">

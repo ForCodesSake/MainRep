@@ -18,6 +18,10 @@ body {
   text-align: justify;
 }
 
+.navbar .container-fluid .navbar-brand:hover {
+	color:gold;
+}
+
 .navbar .nav .tabs:hover,
 .navbar .navbar-collapse  .nav> .active > .tabs,
 .navbar .navbar-collapse  .nav> .active > .tabs:hover,
@@ -36,16 +40,6 @@ body {
   z-index: 1;
 }
 
-.navbar  .container-fluid .navbar-header .navbar-brand{
-	color: skyblue;
-	font-size: 20px;
-}
-
-.navbar  .container-fluid .navbar-header .navbar-brand:hover{
-	color: white;
-	font-size: 20px;
-}
-
 /*
  * Sidebar
  */
@@ -54,7 +48,6 @@ body {
 .container-fluid .row .sidebar {
   display: none;
     z-index: 1;
-
 }
 @media (min-width: 768px) {
 .container-fluid .row .sidebar {
