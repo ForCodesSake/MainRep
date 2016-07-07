@@ -21,6 +21,7 @@
 	$result2 = mysqli_query($db,"select count(1) FROM movies where id in (SELECT movieid from favourites where userid='$currUser')");
 	$numrows = mysqli_fetch_array($result2);
 	$var=$numrows[0];
+	$bgVar=0;
 	
 	mysqli_close($db);
 ?>
@@ -53,6 +54,10 @@
 		$overallRating=round($totalRatings/$totalVotes,0,PHP_ROUND_HALF_DOWN);
 ?>
 	<div class="col-sm-6">
+	<div style="padding:10px; 
+	<?php 
+		if($bgVar%4==0||$bgVar%4==1) echo "background:#f7f7f7; border-top:1px solid silver; border-bottom:1px solid silver;"
+	?>">
 		<!-- Movie variant -->
 			<div class="movieDabba">
 			<div class="row" style="margin-bottom:10px;">
@@ -76,7 +81,9 @@
 			</div>
 			</div>
 	</div>
+	</div>		
 <?php
+	$bgVar++;
 	}
 ?>		
 </div>

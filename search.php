@@ -24,6 +24,7 @@
 	}
 	$sqlQuery = "SELECT * FROM movies WHERE (".implode(' AND ', $searchTermName).") OR (".implode(' AND ', $searchTermDesc).") order by (totalrating/totalvotes) desc LIMIT 20";
 	$result = mysqli_query($db, $sqlQuery);	
+	$bgVar=0;
 
 	mysqli_close($db);
 ?>
@@ -70,6 +71,10 @@
 		$overallRating=round($totalRatings/$totalVotes,0,PHP_ROUND_HALF_DOWN);
 ?>
 	<div class="col-sm-6">
+	<div style="padding:10px; 
+	<?php 
+		if($bgVar%4==0||$bgVar%4==1) echo "background:#f7f7f7; border-top:1px solid silver; border-bottom:1px solid silver;"
+	?>">
 	<!-- Movie variant -->
 		<div class="movieDabba">
 		<div class="row" style="margin-bottom:10px;">
@@ -93,7 +98,9 @@
 		</div>
 		</div>
 	</div>
+	</div>		
 <?php
+	$bgVar++;
 	}
 ?>		
 </div>
