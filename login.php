@@ -80,15 +80,10 @@
         <input type="text" name="username" class="form-control" value='<?php if(isset($_POST['username']))echo $_POST['username']?>' placeholder="Username" required autofocus>
         <label for="password" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" value='<?php if(isset($_POST['password']))echo $_POST['password']?>' placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
         <button class="log" type="submit">Log in</button>
         <br>
 		<br>
-        <a href=""><p>Forgot Password?</p></a>
+        <!-- <a href=""><p>Forgot Password?</p></a> -->
       </form>
 
     </div> <!-- /container -->
