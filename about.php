@@ -28,8 +28,8 @@
     		  </div>
             <div id="myDiv3" class="col-xs-4 placeholder animate-bottom">
               <img src="images/user.png" width="200" height="200" class="img-responsive">
-              <h4>Gaurav Kumar Rawat</h4>
-              <span class="text-muted">IIT-Roorkee<br><br>Gmail : gauravrawat100@gmail.com<br>Facebook :<a href="https://www.facebook.com/kirito.GKR" target="_blank">Gaurav Kumar Rawat</a><br></span>
+              <h4>utkarsh Kumar sinoriya</h4>
+              <span class="text-muted">IIT-Roorkee<br><br>Gmail : utkarshsinoriya100@gmail.com<br>Facebook :<a href="https://www.facebook.com/kirito.GKR" target="_blank">utkarsh Kumar sinoriya</a><br></span>
             </div>
           </div>
 <?php include 'templates/base2.php'; ?>

@@ -15,6 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Friends With Ratings Homepage">
     <meta name="author" content="Vedanshu Dahiya">
+	    <link rel="icon" href="images/Icon.png">
+
 
     <title>Friends With Ratings</title>
 
@@ -93,7 +95,7 @@
                     <br>
 					<a href="mailto:montyv36@gmail.com">montyv36@gmail.com</a>
                     <br>
-					<a href="mailto:gauravrawat100@gmail.com">gauravrawat100@gmail.com</a>
+					<a href="mailto:utkarshsinoriya100@gmail.com">utkarshsinoriya100@gmail.com</a>
                     <br>
                 </address>
                 <address>
@@ -103,7 +105,7 @@
                     <br>
 					<a href="https://www.facebook.com/profile.php?id=100005538768822" target="_blank">Shubham Verma</a>
                     <br>
-					<a href="https://www.facebook.com/kirito.GKR" target="_blank">Gaurav Kumar Rawat</a>
+					<a href="https://www.facebook.com/kirito.GKR" target="_blank">utkarsh Kumar sinoriya</a>
                     <br>
                 </address>
             </div>
@@ -125,8 +127,8 @@
             </div>
             <div class="col-sm-4">
                 <img class="img-circle img-responsive img-center" src="images/user.png">
-                <h2 class="aboutName">Gaurav Kumar Rawat</h2>
-                <p class="aboutName">IIT-Roorkee<br><br>Gmail : gauravrawat100@gmail.com<br>Facebook :<a href="https://www.facebook.com/kirito.GKR" target="_blank">Gaurav Kumar Rawat</a><br></p>
+                <h2 class="aboutName">utkarsh Kumar sinoriya</h2>
+                <p class="aboutName">IIT-Roorkee<br><br>Gmail : utkarshsinoriya100@gmail.com<br>Facebook :<a href="https://www.facebook.com/kirito.GKR" target="_blank">utkarsh Kumar sinoriya</a><br></p>
             </div>
         </div>
         <!-- /.row -->

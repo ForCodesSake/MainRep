@@ -47,7 +47,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="file for login page">
-    <meta name="author" content="gaurav">
+	    <link rel="icon" href="images/Icon.png">
+
     
     <title>Log In</title>
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
