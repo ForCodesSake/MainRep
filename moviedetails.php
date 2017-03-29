@@ -127,7 +127,7 @@
 <div id="desc" style="font-size:20px; margin-top:10px; padding:5px; background:lightblue;">
 	<div class="row">
 	<div class="col-sm-6">
-	<i><h3 style="margin-top:0;">>>><u>Description</u> : </h3></i>
+	<i><h3 style="margin-top:0;"><u>Description</u> : </h3></i>
 	</div>
 	<div class="col-sm-6" style="text-align:right">
 	<button type="button" class="btn btn-info" data-toggle="modal" data-target="#VotesModal">Check Votes</button>
@@ -147,7 +147,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h3 class="modal-title" style="text-align:center;">Movie Name</h3><br>
-		  <h5 style="text-align:center; margin:0;">Overall Rating : 69</h5>
+		  <h5 style="text-align:center; margin:0;">Overall Rating : <?php echo $overallRating; ?></h5>
         </div>
         <div class="modal-body">
           <table class="table table-striped">

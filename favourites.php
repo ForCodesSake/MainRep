@@ -52,11 +52,13 @@
 		$totalRatings=$row['totalrating'];
 		$totalVotes=$row['totalvotes'];
 		$overallRating=round($totalRatings/$totalVotes,0,PHP_ROUND_HALF_DOWN);
+		
+		if($bgVar%4==0||$bgVar%4==2) echo '<div class="col-sm-12"></div>';
 ?>
 	<div class="col-sm-6">
 	<div style="padding:10px; 
 	<?php 
-		if($bgVar%4==0||$bgVar%4==1) echo "background:#f7f7f7; border-top:1px solid silver; border-bottom:1px solid silver;"
+		if($bgVar%4==0||$bgVar%4==1) echo "background:#f3f3f3; border-top:1px solid silver; border-bottom:1px solid silver;"
 	?>">
 		<!-- Movie variant -->
 			<div class="movieDabba">

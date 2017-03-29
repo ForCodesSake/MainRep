@@ -67,7 +67,7 @@ include('config.php');
 </div>
 </div>
 
-<div class="col-xs-6">
+<div class="col-xs-6" style="background:#d0d0e0;">
 <h2 class="sub-header">Recently Added</h2>
 <div class="table-responsive">   
 <table class="table table-striped">	

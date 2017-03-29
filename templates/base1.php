@@ -80,7 +80,8 @@
             <li <?php if ($thisPage=="allMovies.php") echo "class=\"active\""; ?> ><a href="allMovies.php"><i class="fa fa-arrows-alt" aria-hidden="true"></i>&nbsp;All Movies</a></li>
             <li <?php if ($thisPage=="myAdditions.php") echo "class=\"active\""; ?> ><a href="myAdditions.php"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;My Additions</a></li>
             <li <?php if ($thisPage=="addmovies.php") echo "class=\"active\""; ?> ><a href="addmovies.php"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
-          </ul>
+			<li <?php if ($thisPage=="recommend.php") echo "class=\"active\""; ?> ><a href="recommend.php"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;Movie Recommendations</a></li>
+		  </ul>
 <?php 
 	if($_SESSION['admin']) 
 		{
