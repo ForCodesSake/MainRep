@@ -47,8 +47,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="file for login page">
-	    <link rel="icon" href="images/Icon.png">
-
+	<link rel="icon" href="images/Icon.png">
     
     <title>Log In</title>
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -71,7 +70,7 @@
 
     <div class="container">
       
-      <form class="form-signin" action="" method="POST">
+    <form class="form-signin" action="" method="POST">
         <h2 class="form-signin-heading">Log In</h2>
 <?php 
 	if($error!="")
@@ -81,11 +80,11 @@
         <input type="text" name="username" class="form-control" value='<?php if(isset($_POST['username']))echo $_POST['username']?>' placeholder="Username" required autofocus>
         <label for="password" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" value='<?php if(isset($_POST['password']))echo $_POST['password']?>' placeholder="Password" required>
-        <button class="log" type="submit">Log in</button>
-        <br>
-		<br>
+        <button class="log" type="submit">Log in</button><br>
+		<h4 style="color:white;"><center>OR</center></h4>
+		<center><a href="fblogin.php"><img src="images/fb.png" alt="Facebook Login Button"></a></center>
         <!-- <a href=""><p>Forgot Password?</p></a> -->
-      </form>
+    </form>
 
     </div> <!-- /container -->
       <br><br><br>

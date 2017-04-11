@@ -58,7 +58,7 @@
 	<div class="col-sm-6">
 	<div style="padding:10px; 
 	<?php 
-		if($bgVar%4==0||$bgVar%4==1) echo "background:#f3f3f3; border-top:1px solid silver; border-bottom:1px solid silver;"
+		if($bgVar%4==0||$bgVar%4==3) echo "background:#f3f3f3; border-top:1px solid silver; border-bottom:1px solid silver;"
 	?>">
 		<!-- Movie variant -->
 			<div class="movieDabba">
